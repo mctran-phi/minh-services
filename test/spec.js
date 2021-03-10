@@ -45,15 +45,3 @@ describe('Database', () => {
     });
   });
 });
-
-// Unit Testing
-
-// it('should increase question length by 4')
-// Get current question length
-// Invoke handleQuestions to render more questions
-// Question length should have increased by 4
-
-// it('should filter searched words')
-// Invoke handleSearch to filter out questions/answers
-// Iterate through questions and answers
-// Check if searched word is contained in div

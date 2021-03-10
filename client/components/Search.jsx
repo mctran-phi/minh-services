@@ -47,7 +47,7 @@ const SearchBar = styled.div`
 
 const Search = ({handleSearch, searchQuery, emptySearch}) => (
   <SearchBar>
-    <Magnifying src='https://www.flaticon.com/svg/vstatic/svg/56/56936.svg?token=exp=1611690410~hmac=6b766aa2f97e55558eff166651138aca' />
+    <Magnifying src='https://static.thenounproject.com/png/9509-200.png' />
     <SearchInput type='text' placeholder='Have a question? Search for answers' onChange={e => handleSearch(e.target.value)} />
     <Exit query={searchQuery} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSir57AKqjH6VYMg11KEt1LpSvYJubL7CVI_A&usqp=CAU' onClick={e => emptySearch(e.target.previousSibling)} />
   </SearchBar>
