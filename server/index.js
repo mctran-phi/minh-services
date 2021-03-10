@@ -3,11 +3,13 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const Question = require('../database/question.js');
 const cors = require('cors');
+const compression = require('compression');
 const app = express();
 
 const port = 1337;
 
 app.use(cors());
+app.use(compression());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
