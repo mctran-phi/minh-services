@@ -20,6 +20,8 @@ We are cloning an Amazon product page, specifically a PS5 controller. This modul
 
 ## Usage
 
+![](http://g.recordit.co/B7RJmWkmdf.gif)
+
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
