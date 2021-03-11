@@ -2,7 +2,7 @@
 
 Congo Prime
 
-We are cloning an Amazon product page, specifically a PS5 controller. This module is for the customers Q & A.
+We are cloning an Amazon product page, specifically a PS5 controller. This repository contains the customers Q & A module.
 
 ## Related Projects
 
@@ -47,7 +47,7 @@ npm start
 
 ## Dependencies
 
-Run the following command to install dependancies
+Run the following command to install dependencies.
 
 ```sh
 npm install
