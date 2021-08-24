@@ -35,7 +35,7 @@ const SeeMore = styled.span`
 
 const FilterAnswer = ({answer, handleClick, clicked}) => (
   <span>
-      {answer[0].text ? (answer[0].text.length < 200 ? <span className='answer'>{answer[0].text}</span> : clicked ?
+    {answer[0].text ? (answer[0].text.length < 200 ? <span className='answer'>{answer[0].text}</span> : clicked ?
       <span>
         <span className='answer'>{answer[0].text}</span> <SeeMore onClick={e => handleClick()}>see less</SeeMore>
       </span> :

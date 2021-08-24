@@ -171,7 +171,7 @@ class QuestionList extends React.Component {
   handleAnswer() {
     const {answerData, answerRender} = this.state;
     let newAns = answerRender.slice();
-    for(let i = answerRender.length; i < answerRender.length + 2; i++) {
+    for (let i = answerRender.length; i < answerRender.length + 2; i++) {
       newAns.push(answerData[i]);
     }
     this.setState({
@@ -190,7 +190,9 @@ class QuestionList extends React.Component {
   }
 
   handleVote(vote) {
-    if (this.state.didVote + vote > 1 || this.state.didVote + vote < -1) return;
+    if (this.state.didVote + vote > 1 || this.state.didVote + vote < -1) {
+      return;
+    }
     axios.patch(`http://localhost:1337/api/questions/:${this.props.question._id}/question`, {
       data: vote
     })
@@ -221,12 +223,12 @@ class QuestionList extends React.Component {
             <Answer>
               <First>
                 {this.state.answerRender[0].text.length < 222 ? <div>{this.state.answerRender[0].text}</div> : this.state.clicked ?
-                <div>
-                  {this.state.answerRender[0].text} <SeeMore onClick={e => this.handleClick()}>see less</SeeMore>
-                </div> :
-                <div>
-                  {this.state.answerRender[0].text.slice(0, 222)}...<SeeMore onClick={e => this.handleClick()}>see more</SeeMore>
-                </div>}
+                  <div>
+                    {this.state.answerRender[0].text} <SeeMore onClick={e => this.handleClick()}>see less</SeeMore>
+                  </div> :
+                  <div>
+                    {this.state.answerRender[0].text.slice(0, 222)}...<SeeMore onClick={e => this.handleClick()}>see more</SeeMore>
+                  </div>}
               </First>
               <User>By {this.state.answerRender[0].username} on {this.state.answerRender[0].createdAt}</User>
               {this.state.answerRender.length > 1 ? <Answers>{answerRender.slice(1).map(answer => <AnswerList key={answer._id} answer={answer} />)}</Answers> : null}

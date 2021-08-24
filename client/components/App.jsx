@@ -37,14 +37,14 @@ const Unordered = styled.ul`
   width: 65%;
 `;
 
-  const List = styled.li`
+const List = styled.li`
   float: left;
   height: 50px;
   border-bottom: ${props => props.selected === 'qna' ? '3px solid orange' : null};
   font-weight: ${props => props.selected === 'qna' ? 'bold' : null};
-  `;
+`;
 
-  const Nav = styled.a`
+const Nav = styled.a`
   text-align: center;
   display: block;
   margin: 12px;
@@ -72,9 +72,10 @@ class App extends React.Component {
       .then(data => {
         data = data.data.sort((a, b) => b.votes - a.votes);
         this.setState({
-        data: data,
-        questions: data.slice(0, 4)
-      })})
+          data: data,
+          questions: data.slice(0, 4)
+        });
+      })
       .catch(err => console.error(err));
   }
 
@@ -100,7 +101,9 @@ class App extends React.Component {
     for (let i = 0; i < data.length; i++) {
       let ans = {};
       for (let j = 0; j < data[i].answer.length; j++) {
-        if (!data[i].answer[j]) continue;
+        if (!data[i].answer[j]) {
+          continue;
+        }
         if (data[i].answer[j].text.includes(val)) {
           ans = data[i].answer[j];
           break;

@@ -41,12 +41,12 @@ class AnswerList extends React.Component {
       <Answer>
         <div>
           {this.props.answer.text.length < 200 ? <div>{this.props.answer.text}</div> : this.state.clicked ?
-          <div>
-            {this.props.answer.text} <SeeMore onClick={e => this.handleClick()}>see less</SeeMore>
-          </div> :
-          <div>
-            {this.props.answer.text.slice(0, 200)}...<SeeMore onClick={e => this.handleClick()}>see more</SeeMore>
-          </div>}
+            <div>
+              {this.props.answer.text} <SeeMore onClick={e => this.handleClick()}>see less</SeeMore>
+            </div> :
+            <div>
+              {this.props.answer.text.slice(0, 200)}...<SeeMore onClick={e => this.handleClick()}>see more</SeeMore>
+            </div>}
         </div>
         <User>By {this.props.answer.username} on {this.props.answer.createdAt}</User>
       </Answer>
